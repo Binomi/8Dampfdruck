@@ -1,0 +1,9 @@
+*.aux
+
+*.gz
+
+*.toc
+
+*.synctx.gz
+
+Protokoll8.log
