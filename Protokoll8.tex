@@ -181,6 +181,37 @@ Praktikant:
 
 \section{Auswertung}
 \label{sec:auswertung}
+\subsection{Druckkurven}
+\begin{align*}
+	&R_0 = 1000 ~ \si{\ohm}\\
+	&A   = 3.9083 \cdot 10^{-3} ~ \si{\celsius^{-1}}\\
+	&B   = -5.775 \cdot 10^{-7} ~ \si{\celsius^{-2}}\\
+\end{align*}
+\begin{align}
+	R(\vartheta)&=R_0\cdot\left(1 + A\vartheta + B\vartheta^2\right)\\ \Rightarrow
+	\vartheta&=-\frac{A}{2B}-\sqrt{\frac{A^2}{4B^2}-\frac{1}{B}+\frac{R}{R_0 B}}
+\end{align}
+\begin{align}
+	\Delta\vartheta=\pm (0.3~\si{\celsius}+0.005\vartheta)
+\end{align}
+
+\begin{align}
+	T=\vartheta+273.15~\si{\celsius}
+\end{align}
+
+\begin{figure}[!htb]
+	\centering
+	\input{Erwaermen.tex}
+	\caption{Arrheniusplot für das Erwärmen}
+	\label{fig:mess1}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\input{Abkuehlen.tex}
+	\caption{Arrheniusplot für das Abkühlen}
+	\label{fig:mess2}
+\end{figure}
 
 
 \section{Diskussion}

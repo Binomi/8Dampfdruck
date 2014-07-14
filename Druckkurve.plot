@@ -1,14 +1,26 @@
 reset
 set terminal epslatex color
-set output 'Druckkurve.tex'
-set xlabel '$1/T~[\si{1/\celsius}]$'
-set ylabel '$\ln(p)$'
-#set xrange [0:*]
+set output 'Erwaermen.tex'
+set xlabel '$1/T~[\si{1/\kelvin}]$'
+set ylabel '$\ln(\frac{p}{\si{\pascal}})$'
+set key top right
 
-p 'messung1.dat' u (1/$1):(log($2)),\
-'messung2.dat' u (1/$1):(log($2))
+f(x)=m*x+b
+
+set fit logfile 'Erwaermen.log'
+fit f(x) 'messung1.dat' u (1/$1):(log($2)) via m,b
+p 'messung1.dat' u (1/$1):(log($2)):($3/$1**2):($4/$2) w xye t'Messwerte' ,\
+f(x) lt -1 t'Regressionsgerade'
 
 set output
-!epstopdf Druckkurve.eps
-set terminal windows
-replot
+!epstopdf Erwaermen.eps
+
+set output 'Abkuehlen.tex'
+
+set fit logfile 'Abkuehlen.log'
+fit f(x) 'messung2.dat' u (1/$1):(log($2)) via m,b
+p 'messung2.dat' u (1/$1):(log($2)):($3/$1**2):($4/$2) w xye t'Messwerte',\
+f(x) lt -1 t'Regressionsgerade'
+
+set output
+!epstopdf Abkuehlen.eps
