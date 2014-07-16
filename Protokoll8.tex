@@ -182,11 +182,19 @@ Praktikant:
 \section{Auswertung}
 \label{sec:auswertung}
 \subsection{Druckkurven}
-\begin{align*}
-	&R_0 = 1000 ~ \si{\ohm}\\
-	&A   = 3.9083 \cdot 10^{-3} ~ \si{\celsius^{-1}}\\
-	&B   = -5.775 \cdot 10^{-7} ~ \si{\celsius^{-2}}\\
-\end{align*}
+\begin{table}
+ \centering
+ \begin{tabular}{|c|c|}
+   \hline
+   R$_0$ & $1000 ~ \si{\ohm}$\\
+   A   & $3.9083 \cdot 10^{-3} ~ \si{\celsius^{-1}}$\\
+   B   & $-5.775 \cdot 10^{-7} ~ \si{\celsius^{-2}}$\\
+   \hline
+ \end{tabular}
+ \caption{Kennwerte des Widerstandsthermometers}
+ \label{tab:Pt1000}
+\end{table}
+
 \begin{align}
 	R(\vartheta)&=R_0\cdot\left(1 + A\vartheta + B\vartheta^2\right)\\ \Rightarrow
 	\vartheta&=-\frac{A}{2B}-\sqrt{\frac{A^2}{4B^2}-\frac{1}{B}+\frac{R}{R_0 B}}
@@ -195,9 +203,8 @@ Praktikant:
 	\Delta\vartheta=\pm (0.3~\si{\celsius}+0.005\vartheta)
 \end{align}
 
-\begin{align}
-	T=\vartheta+273.15~\si{\celsius}
-\end{align}
+Nun muss $\vartheta$ noch in Kelvin umgerechnet werden.
+Außerdem wird für $p_0$ der gemessene Umgebungsdruck von 1017 hPa verwendet.
 
 \begin{figure}[!htb]
 	\centering
@@ -212,6 +219,80 @@ Praktikant:
 	\caption{Arrheniusplot für das Abkühlen}
 	\label{fig:mess2}
 \end{figure}
+
+\begin{table}[!htb]
+ \centering
+ \begin{tabular}{|c|c|c|}
+  \hline
+  Größe&Erwärmen&Abkühlen\\
+  \hline
+  m & $(-4326 \pm 13)~\si{\kelvin}$ & $(-4618 \pm 21)~\si{\kelvin}$ \\
+  b & $12.0672  \pm 0.02819$ & $12.5427 \pm 0.04496$ \\
+  \hline
+  %$\Lambda_V$ & $(35970 \pm 110)~\si{\joule/\mol}$ & $(38400 \pm 180)~\si{\joule/\mol}$\\
+  %\hline
+ \end{tabular}
+ \label{tab:regErg}
+\end{table}
+
+Gewichtete Mittelwerte
+\begin{align*}
+ m=(-4407 \pm 11)~\si{\kelvin} \qquad
+ b=12.201 \pm 0.024
+\end{align*}
+
+\begin{align*}
+ \Lambda_V &= -m\cdot R\\
+ \sigma_{\Lambda_V} &= \sigma_m \cdot R\\
+ \Lambda_V&=(36640 \pm 100)~\si{\joule/\mol}
+\end{align*}
+
+\begin{align*}
+ T_0 &= -\frac{m}{b}\\
+ \sigma_{T_0} &= \sqrt{\left(\frac{\sigma_m}{b}\right)^2+\left(\frac{m\cdot \sigma_b}{b^2}\right)^2}\\
+ T_0 &= (361.2 \pm 1.3)\si{\kelvin} = (88.0 \pm 1.3)\si{\celsius}
+\end{align*}
+Dampfdruck vun Wasser bei $T=0\si{\celsius}=273.15\si{\kelvin}$
+\begin{align*}
+ p &= p_0~\exp\left(m\frac{1}{T}+b\right)\\
+ \sigma_p &= p~\sqrt{\frac{\sigma_m^2}{T^2}+\sigma_b^2}\\
+ p &= (1990 \pm 100)\si{\pascal}
+\end{align*}
+
+
+\subsection{Siedetemperatur auf der Zugspitze}
+barometrische Höhenformel
+\begin{align}
+ p(h)=p_0~\exp{\left(\frac{-\rho g h}{p_0}\right)}
+\end{align}
+\begin{align*}
+ \frac{\Lambda_V}{R}\left(\frac{1}{T_0}-\frac{1}{T}\right)
+\end{align*}
+
+\begin{table}[!htb]
+ \centering
+ \begin{tabular}{|c|c|}
+  \hline
+  Größe & Wert\\
+  \hline
+  T$_0$ & $373.15~\si{\kelvin}$\\
+  $\rho$ & $1.29~\si{\kilo \gram/\meter^3}$\\
+  g & $9.81~\si{\meter/\second^2}$\\
+  R & $8.31~\si{\joule/(\mol.\kelvin)}$\\
+  $p_0$ & $1013.25~\si{\hecto \pascal}$\\
+  $\Lambda_V$ & $40642 ~\si{\joule/\mol}$\\
+  \hline
+ \end{tabular}
+ \caption{Literaturwerte}
+ \label{tab:litW}
+\end{table}
+Höhe der Zugspitze $h=2962~\si{\meter}$
+\begin{align*}
+ T &= \left(\frac{1}{T_0}+\frac{\rho g h~R}{p_0~\Lambda_V}\right)^{-1}\\
+ T&=362.9~\si{\kelvin}=89.8\si{\celsius}
+\end{align*}
+
+
 
 
 \section{Diskussion}
