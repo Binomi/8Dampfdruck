@@ -116,6 +116,12 @@
 %Fußnoten auf gleiche Seite
 \interfootnotelinepenalty=1000
 
+%Bibliography \bibliography{literatur} und \cite{gerthsen}
+%\usepackage{cite}
+\usepackage{babelbib}
+\selectbiblanguage{ngerman}
+
+
 \begin{document}
 
 \begin{titlepage}
@@ -170,7 +176,7 @@ Praktikant:
 
 \section{Einleitung}
 \label{sec:einleitung}
-
+\cite[S. $\infty$]{crank}
 
 \section{Theorie}
 \label{sec:theorie}
@@ -316,5 +322,8 @@ Höhe der Zugspitze $h=2962~\si{\meter}$
 \label{sec:diskussion}
 
 \section{Anhang}
+
+\bibliography{literatur}
+\bibliographystyle{babalpha}
 
 \end{document}
