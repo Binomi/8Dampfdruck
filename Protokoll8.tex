@@ -184,9 +184,15 @@ Dieser kann seine Temperatur nur aufgrund der Sublimationskälte konstant halten
 
 \subsection{Van-der-Waals-Gleichung}
 Die reale Gasgleichung lautet nach \cite[S. 303]{gerthsen} mit der Ersetzung von $V_\text{mol}=V/n$ 
-$$ \left(p+\frac{n^2a}{V^2}\right)\left( V-nb \right)=nRT$$
-Dabei betragen für Wasser die \emph{Van-der-Waals-Konstanten} $a=0.5537\si{\pascal~\meter^6}$ (Binnendruck) und $b=3.05\cdot10^{-5}\si{\meter^3}$ (Sättigungsdruck).
-
+\begin{align}
+	\left(p+\frac{n^2a}{V^2}\right)\left( V-nb \right)=nRT \label{eq:vanderwaalsgl}
+\end{align}
+Dabei betragen für Wasser die \emph{Van-der-Waals-Konstanten} $a=0.5537\si{\pascal~\meter^6}$ (Binnendruck) und $b=3.05\cdot10^{-5}\si{\meter^3}$ (Sättigungsdruck).\\
+Sie entsteht dadurch, dass bei realen Gasen die Ausdehnung der Atome nicht mehr vernachlässigt wird.
+Dadurch ist das "reale Volumen" größer, als das ideale und zwar um eine stoffabhängige Konstante multipliziert mit der Stoffmenge: $V_\text{ideal}=V_\text{Real}-n\cdot b$ .\\
+Da in der idealen Gasgleichung die intermolekularen Kräfte bis auf elastische Stöße vernachlässigt sind, muss auch im Druck ein Korrekturfaktor eingeführt werden.
+Der Druck sinkt durch die zusätzlichen Möglichkeiten, Energie an andere Teilchen zu übertragen, weshalb zu dem "realen Druck" ein Summand hinzugefügt werden muss, um den idealen zu bekommen: $p_\text{ideal}=p_\text{real}+\frac{n^2\cdot a^2}{V^2}$ .
+Aus der idealen Gasgleichung $p_\text{ideal}V_\text{ideal}=nRT$ wird so Gleichung \eqref{eq:vanderwaalsgl}.
 \subsection{Maxwell'sche Gerade}
 
 \subsection{Carnot'scher Kreisprozess}
