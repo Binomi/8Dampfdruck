@@ -248,7 +248,20 @@ So wird in $3\rightarrow 4$ die Arbeit
 \end{align*}
 verrichtet.
 Um wieder zum Ausgangspunkt 1 zurück zu kommen, muss das Volumen wieder um $dT$ erwärmt werden.\\
-D
+Die insgesamt geleistete Arbeit ist unter Vernachlässigung von $W_{23}$ und $W_{41}$
+\begin{align*}
+	-\Delta W=-\Delta W_{12}-\Delta W_{34}=-dp\cdot (V_\text D -V_\text{Fl})
+\end{align*}
+Woraus sich mit der Formel für den Wirkungsgrad eines Carnot-Prozesses die Verdampfungswärme $\Lambda$ errechnen lässt:
+\begin{align*}
+	\eta&=-\frac{\Delta W}{\Delta Q}=\frac{dp\cdot (V_\text D-V_\text{Fl})}{\Lambda}=\frac{dT}{T+dT}\approx \frac{dT}{T}\\
+	\Leftrightarrow\qquad \Lambda&=T\frac{dp}{dT}(V_\text D-V_\text{Fl})
+\end{align*}
+Hieraus kann nun mit dem idealen Gasgesetz unter Trennung der Variablen und mithilfe Integrierens die \emph{Dampfdruckformel} nach \cite[S. 342, Formel (10.127)]{demtroeder} 
+hergeleitet werden
+\begin{align}
+	p(T)=p_0\cdot \exp\left( \frac{\Lambda}{R}\cdot\left( \frac{1}{T_0}-\frac{1}{T} \right)\right)
+\end{align}
 
 
 
