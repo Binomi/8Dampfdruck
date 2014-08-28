@@ -265,7 +265,18 @@ Hieraus kann nun mit dem idealen Gasgesetz unter Trennung der Variablen und mith
 
 
 \subsection{Widerstandsthermometer}
-
+Ein Widerstandsthermometer besteht aus einem Leiter, dessen elektrischer Widerstand von der Temperatur abhängig ist.
+Diesen kann man nun z.B. mit der Wheatstone'schen-Brückenschlatung vermessen.
+Über das bekannte Verhältnis von Temperatur zu Widerstand kann man nun die Temperatur bestimmen.\\
+In unserem Fall verwenden wir ein Pt1000-Thermometer.
+Die Messsonde besteht hierbei aus reinem Platin und der Widerstand beträgt bei $T=0\si{\celsius}\quad R_0=1000\si{\ohm}$.
+Die Temperaturabhängigkeit wird durch
+\begin{align*}
+	R(T)=R_0\cdot \left( 1+AT+BT^2 \right)
+\end{align*}
+mit $A_\text{Pt}=3.9083\cdot 10^{-3}\si{\celsius^{-1}}$ und $B_\text{Pt}=-5.775\cdot 10^{-7}\si{\celsius^{-2}}$.
+Der sich ergebende Fehler liegt bei $\Delta T=\pm (0.3\si{\celsius}+0.005T)$.
+Diese Formel ist jedoch nur für $T>0\si{\celsius}$ richtig, was in unserem Versuchsaufbau jedoch nicht zu Problemen führt.
 
 
 
