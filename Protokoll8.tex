@@ -185,11 +185,11 @@ Die reale Gasgleichung lautet nach \cite[S. 303]{gerthsen} mit der Ersetzung von
 \begin{align}
 	\left(p+\frac{n^2a}{V^2}\right)\left( V-nb \right)=nRT \label{eq:vanderwaalsgl}
 \end{align}
-Dabei betragen für Wasser die \emph{Van-der-Waals-Konstanten} $a=0.5537\si{\pascal~\meter^6}$ (Binnendruck) und $b=3.05\cdot10^{-5}\si{\meter^3}$ (Sättigungsdruck).\\
+Dabei betragen für Wasser die \emph{Van-der-Waals-Konstanten} $a=0.5537~\si{\pascal~\meter^6}$ (Binnendruck) und $b=3.05\cdot10^{-5}\si{\meter^3}$ (Sättigungsdruck).\\
 Sie entsteht dadurch, dass bei realen Gasen die Ausdehnung der Atome nicht mehr vernachlässigt wird.
 Dadurch ist das "reale Volumen" größer, als das ideale und zwar um eine stoffabhängige Konstante multipliziert mit der Stoffmenge: $V_\text{ideal}=V_\text{Real}-n\cdot b$ .\\
 Da in der idealen Gasgleichung die intermolekularen Kräfte bis auf elastische Stöße vernachlässigt sind, muss auch im Druck ein Korrekturfaktor eingeführt werden.
-Der Druck sinkt durch die zusätzlichen Möglichkeiten, Energie an andere Teilchen zu übertragen, weshalb zu dem "realen Druck" ein Summand hinzugefügt werden muss, um den idealen zu bekommen: $p_\text{ideal}=p_\text{real}+\frac{n^2\cdot a^2}{V^2}$ .
+Der Druck sinkt durch die zusätzlichen Möglichkeiten, Energie an andere Teilchen zu übertragen, weshalb zu dem ``realen Druck'' ein Summand hinzugefügt werden muss, um den idealen zu bekommen: $p_\text{ideal}=p_\text{real}+\frac{n^2\cdot a^2}{V^2}$ .
 Aus der idealen Gasgleichung $p_\text{ideal}V_\text{ideal}=nRT$ wird so Gleichung \eqref{eq:vanderwaalsgl}.
 
 
@@ -266,7 +266,32 @@ Hieraus kann nun mit dem idealen Gasgesetz unter Trennung der Variablen und mith
 
 \subsection{Widerstandsthermometer}
 
+Bei diesem Versuch wird zur Messung der Temperatur ein Pt1000-Widerstandsthermometer verwendet.
+Der Name verrät, dass der Messfühler aus Platin ist und bei $0\si{\celsius}$ einen Widerstand von $R_0=1000\si{\ohm}$ hat.
+Der Widerstand hängt so von der Temperatur $\vartheta>0\si{\celsius}$ ab:
+\begin{align}
+	R(\vartheta)&=R_0\cdot\left(1 + A\vartheta + B\vartheta^2\right) \label{eq:Pt1000}
+\end{align}
+Die zugehörigen Konstanten findet man in Tabelle \ref{tab:Pt1000}.
 
+\begin{table}[!htb]
+ \centering
+ \begin{tabular}{|c|c|}
+   \hline
+   R$_0$ & $1000 ~ \si{\ohm}$\\
+   A   & $3.9083 \cdot 10^{-3} ~ \si{\celsius^{-1}}$\\
+   B   & $-5.775 \cdot 10^{-7} ~ \si{\celsius^{-2}}$\\
+   \hline
+ \end{tabular}
+ \caption{Kennwerte des Widerstandsthermometers}
+ \label{tab:Pt1000}
+\end{table}
+
+Der Fehler der Temperaturmessung dieses Gerätes liegt bei
+\begin{align}
+	\Delta\vartheta=\pm (0.3~\si{\celsius}+0.005\vartheta)~.
+	\label{eq:Pt1000_fehler}
+\end{align}
 
 
 \section{Durchführung}
@@ -286,33 +311,14 @@ Dies geschieht in 1 Bar-Schritten.
 Das Heizen wird beendet, wenn $1900 ~\si{\ohm}$ oder $45 \si{\bar}$ überschritten werden, damit das Gerät keinen Schaden nimmt.
 Nun wird die Messung während des Abkühlens wiederholt.
 
-\subsection{Sicherheitshinweise}
-
-
 \section{Auswertung}
 \label{sec:auswertung}
 \subsection{Druckkurven}
-\begin{table}
- \centering
- \begin{tabular}{|c|c|}
-   \hline
-   R$_0$ & $1000 ~ \si{\ohm}$\\
-   A   & $3.9083 \cdot 10^{-3} ~ \si{\celsius^{-1}}$\\
-   B   & $-5.775 \cdot 10^{-7} ~ \si{\celsius^{-2}}$\\
-   \hline
- \end{tabular}
- \caption{Kennwerte des Widerstandsthermometers}
- \label{tab:Pt1000}
-\end{table}
-
+Löst man \eqref{eq:Pt1000} nach der Temperatur $\vartheta$ auf, ergibt sich folgende Gleichung
 \begin{align}
-	R(\vartheta)&=R_0\cdot\left(1 + A\vartheta + B\vartheta^2\right)\\ \Rightarrow
 	\vartheta&=-\frac{A}{2B}-\sqrt{\frac{A^2}{4B^2}-\frac{1}{B}+\frac{R}{R_0 B}}
 \end{align}
-\begin{align}
-	\Delta\vartheta=\pm (0.3~\si{\celsius}+0.005\vartheta)
-\end{align}
-
+Für den Fehler $\Delta\vartheta$ benutzt man \eqref{eq:Pt1000_fehler}.
 Nun muss $\vartheta$ noch in Kelvin umgerechnet werden.
 Außerdem wird für $p_0$ der gemessene Umgebungsdruck von 1017 hPa verwendet.
 
