@@ -260,6 +260,7 @@ Woraus sich mit der Formel für den Wirkungsgrad eines Carnot-Prozesses die Verd
 Hieraus kann nun mit dem idealen Gasgesetz unter Trennung der Variablen und mithilfe Integrierens die \emph{Dampfdruckformel} nach \cite[S. 342, Formel (10.127)]{demtroeder} hergeleitet werden
 \begin{align}
 	p(T)=p_0\cdot \exp\left( \frac{\Lambda}{R}\cdot\left( \frac{1}{T_0}-\frac{1}{T} \right)\right)
+	\label{eq:Dampfdruck}
 \end{align}
 
 
@@ -303,7 +304,7 @@ Der Fehler der Temperaturmessung dieses Gerätes liegt bei
 	\label{fig:Aufbau}
 \end{figure}
 
-Nachdem die Sicherheitshinweise (insbesondere die starke Erwärmung steigert das Gefahrenpotential) sorgfältig durchgelesen wurden, schaltet man das Gerät ein.
+Nachdem die Sicherheitshinweise (insbesondere die starke Erwärmung und der hohe Druck steigert das Gefahrenpotential) sorgfältig durchgelesen wurden, schaltet man das Gerät ein.
 Der Heizstrahler erwärmt dann den mit Wasser gefüllten Kolben, welches dadurch verdampft.
 Am angeschlossenen Manometer liest man den Druck ab.
 Zeitgleich notiert man den Wert des Widerstandsthermometers und somit indirekt die Temperatur.
@@ -321,6 +322,9 @@ Löst man \eqref{eq:Pt1000} nach der Temperatur $\vartheta$ auf, ergibt sich fol
 Für den Fehler $\Delta\vartheta$ benutzt man \eqref{eq:Pt1000_fehler}.
 Nun muss $\vartheta$ noch in Kelvin umgerechnet werden.
 Außerdem wird für $p_0$ der gemessene Umgebungsdruck von 1017 hPa verwendet.
+Trägt man nun den Druck logarithmisch gegen den Kehrwert der Temperatur auf, erwartet man nach \eqref{eq:Dampfdruck} eine Gerade $$\ln\left(\frac{p}{p_0}\right) = -\frac{\Lambda}{R}\cdot\frac{1}{T}+\frac{\Lambda}{R}\cdot \frac{1}{T_0} = m \cdot T^{-1} + b$$
+Einen solchen Graphen nennt man \textit{Arrheniusplot}.
+Dies wurde einmal für das Erwärmen (Abb. \ref{fig:mess1}) und das Abkühlen (Abb. \ref{fig:mess2}) gemacht, die Werte aus der linearen Regression finden sich in Tabelle \ref{tab:regErg} wieder.
 
 \begin{figure}[!htb]
 	\centering
@@ -348,27 +352,28 @@ Außerdem wird für $p_0$ der gemessene Umgebungsdruck von 1017 hPa verwendet.
   %$\Lambda_V$ & $(35970 \pm 110)~\si{\joule/\mol}$ & $(38400 \pm 180)~\si{\joule/\mol}$\\
   %\hline
  \end{tabular}
+ \caption{Werte aus der linearen Regression der Arrheniusgraphen} 
  \label{tab:regErg}
 \end{table}
 
-Gewichtete Mittelwerte
+Dies sind die gewichteten Mittelwerte aus beiden Messungen:
 \begin{align*}
  m=(-4407 \pm 11)~\si{\kelvin} \qquad
  b=12.201 \pm 0.024
 \end{align*}
-
+Daraus berechnet man die Verdampfungswärme $\Lambda_V$ mit zugehörigem Fehler aus der Fehlerfortpflanzung:
 \begin{align*}
  \Lambda_V &= -m\cdot R\\
  \sigma_{\Lambda_V} &= \sigma_m \cdot R\\
  \Lambda_V&=(36640 \pm 100)~\si{\joule/\mol}
 \end{align*}
-
+Außerdem kann die Siedetemperatur von Wasser berechnet werden:
 \begin{align*}
  T_0 &= -\frac{m}{b}\\
  \sigma_{T_0} &= \sqrt{\left(\frac{\sigma_m}{b}\right)^2+\left(\frac{m\cdot \sigma_b}{b^2}\right)^2}\\
  T_0 &= (361.2 \pm 1.3)\si{\kelvin} = (88.0 \pm 1.3)\si{\celsius}
 \end{align*}
-Dampfdruck vun Wasser bei $T=0\si{\celsius}=273.15\si{\kelvin}$
+Nun berechnen wir noch den Dampfdruck von Wasser bei $T=0\si{\celsius}=273.15\si{\kelvin}$ und unter Normaldruck $p_0=1013.25~\si{\hecto \pascal}$:
 \begin{align*}
  p &= p_0~\exp\left(m\frac{1}{T}+b\right)\\
  \sigma_p &= p~\sqrt{\frac{\sigma_m^2}{T^2}+\sigma_b^2}\\
@@ -377,14 +382,15 @@ Dampfdruck vun Wasser bei $T=0\si{\celsius}=273.15\si{\kelvin}$
 
 
 \subsection{Siedetemperatur auf der Zugspitze}
-barometrische Höhenformel
+Hier soll nun die Siedetemperatur des Wassers auf der Zugspitze berechnet werden.
+Dort ist der Luftdruck geringer als auf Meereshöhe.
+Er berechnet sich nach der \textit{barometrische Höhenformel} \cite[S. 107]{gerthsen}:
 \begin{align}
  p(h)=p_0~\exp{\left(\frac{-\rho g h}{p_0}\right)}
+ \label{eq:baroHoehenformel}
 \end{align}
-\begin{align*}
- \frac{\Lambda_V}{R}\left(\frac{1}{T_0}-\frac{1}{T}\right)
-\end{align*}
-
+Wir verwenden hier die Literaturwerte für die Siedertemperatur $T_0$ auf NN und die molare Verdampfungswärme $\Lambda_V$  - nicht die von uns berechneten Werte, da diese eine große Abweichung aufweisen.
+Diese Werte und alle weiteren bei dieser Rechnung benötigten sind in der Tabelle \ref{tab:litW} zu finden.
 \begin{table}[!htb]
  \centering
  \begin{tabular}{|c|c|}
@@ -402,13 +408,15 @@ barometrische Höhenformel
  \caption{Literaturwerte}
  \label{tab:litW}
 \end{table}
-Höhe der Zugspitze $h=2962~\si{\meter}$
+Um die Siedetemperatur zu berechnen, setzt man Dampfdruck nach \eqref{eq:Dampfdruck} und Luftdruck nach \eqref{eq:baroHoehenformel} gleich.
 \begin{align*}
- T &= \left(\frac{1}{T_0}+\frac{\rho g h~R}{p_0~\Lambda_V}\right)^{-1}\\
- T&=362.9~\si{\kelvin}=89.8\si{\celsius}
+ \frac{\Lambda_V}{R}\left(\frac{1}{T_0}-\frac{1}{T_S}\right)=-\frac{\rho g h}{p_0}
 \end{align*}
-
-
+Es ergibt sich
+\begin{align}
+ T_S &= \left(\frac{1}{T_0}+\frac{\rho g h~R}{p_0~\Lambda_V}\right)^{-1}
+\end{align}
+Für die Höhe der Zugspitze $h=2962~\si{\meter}$ ergibt sich also eine Siedetemperatur des Wassers von $T_S=362.9~\si{\kelvin}=89.8\si{\celsius}$.
 
 
 \section{Diskussion}
