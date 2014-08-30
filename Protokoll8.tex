@@ -176,15 +176,11 @@ Praktikant:
 
 \section{Einleitung}
 \label{sec:einleitung}
-Will man ein Ei im Bergurlaub kochen, so kann es einem schnell passieren, dass das Eigelb noch flüssig ist.
-Man hat nichts anders gemacht, als zu Hause und dennoch scheint das kochende Wasser nicht so heiß zu sein.
-Um diesen Effekt erklären zu können, bedarf es des Dampfdrucks.
-Wie groß dieser ist und wie man das perfekte Ei auch immer und überall bekommt, wird in diesem Versuch geklärt.
-
 %ein paar Sätze vorneweg
-Ein \textit{Schnellkochtopf} basiert auch auf diesem Prinzip.
+Ein \textit{Schnellkochtopf} basiert auf dem Prinzip des Dampfdrucks.
 In ihm steigt der Druck an und somit erhöht sich die Siedetemperatur von Wasser und das Essen wird schneller gar.
-Außerdem wird dadurch Energie gespart. 
+Außerdem wird dadurch Energie gespart.
+Um dies zu verstehen reicht das Ideale Gasmodell nicht mehr aus, sondern es muss eine genauere Näherung betrachtet werden.
 
 \section{Theorie}
 \label{sec:theorie}
@@ -192,7 +188,7 @@ Außerdem wird dadurch Energie gespart.
 \subsection{Van-der-Waals-Gleichung}
 Die reale Gasgleichung lautet nach \cite[S. 303]{gerthsen} mit der Ersetzung von $V_\text{mol}=V/n$ 
 \begin{align}
-	\left(p+\frac{n^2a}{V^2}\right)\left( V-nb \right)=nRT \label{eq:vanderwaalsgl}
+\left(p+\frac{n^2a}{V^2}\right)\left( V-nb \right)=nRT \label{eq:vanderwaalsgl}
 \end{align}
 Dabei betragen für Wasser die \emph{Van-der-Waals-Konstanten} $a=0.5537~\si{\pascal~\meter^6}$ (Binnendruck) und $b=3.05\cdot10^{-5}\si{\meter^3}$ (Sättigungsdruck).\\
 Sie entsteht dadurch, dass bei realen Gasen die Ausdehnung der Atome nicht mehr vernachlässigt wird.
@@ -215,20 +211,20 @@ Dies geschieht so lange, bis der Sättigungsdampfdruck $p_S$ erreicht ist, welch
 Mit sinkender Temperatur sinkt auch der Dampfdruck und die Maxwell-Gerade wird länger.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Bild mit Van-der-Waals-Kurven
 \begin{figure}[!h]
-	\centering
-	\includegraphics[scale=0.6]{vanwaalsiso}
-	\caption{Darstellung verschiedener Isotherme aus der Van-der-Waals-Gleichung von \protect\footnotemark}
-	\label{fig:vanderwaalskurven}
+\centering
+\includegraphics[scale=0.6]{vanwaalsiso}
+\caption{Darstellung verschiedener Isotherme aus der Van-der-Waals-Gleichung von \protect\footnotemark}
+\label{fig:vanderwaalskurven}
 \end{figure}
 \footnotetext{30.08.2014, 16:00 Uhr, http://www.physikon.de/01/14/01van3.gif} 
 \subsection{Carnot'scher Kreisprozess}
 Ein Carnot'scher Kreisprozess ist in 4 Schritte geteilt.
 \begin{itemize}
-	\item $1\rightarrow 2$: isotherme Expansion, bei der die Wärme $Q_C$ hinzugeführt wird.
-	\item $2\rightarrow 3$: adiabatische Expansion, bei der eine Abkühlung von der Temperatur $T_A$ auf $T_B$ stattfindet.
-	\item $3\rightarrow 4$: isotherme Kompression, durch Wärmeentzug von $Q_D$ auf dem Temperaturniveau $T_B$.
-	\item $4\rightarrow 1$: adiabatische Kompression bis der Anfangszustand wieder erreicht ist.
-		Ein Carnot-Prozess ist also ein Prozess, an dessen Ende im System wieder die Ausgangslage ist.
+\item $1\rightarrow 2$: isotherme Expansion, bei der die Wärme $Q_C$ hinzugeführt wird.
+\item $2\rightarrow 3$: adiabatische Expansion, bei der eine Abkühlung von der Temperatur $T_A$ auf $T_B$ stattfindet.
+\item $3\rightarrow 4$: isotherme Kompression, durch Wärmeentzug von $Q_D$ auf dem Temperaturniveau $T_B$.
+\item $4\rightarrow 1$: adiabatische Kompression bis der Anfangszustand wieder erreicht ist.
+	Ein Carnot-Prozess ist also ein Prozess, an dessen Ende im System wieder die Ausgangslage ist.
 \end{itemize}
 Die geleistete Arbeit in diesem Prozess bestimmt sich aus der Größe der eingeschlossenen Fläche im $p$-$V$-Diagramm.
 Da sie größer wird, je größer der Temperaturunterschied $T_A-T_B$ ist, ist auch somit der Wirkungsgrad hierbei größer.
@@ -236,10 +232,10 @@ Da sie größer wird, je größer der Temperaturunterschied $T_A-T_B$ ist, ist a
 
 \subsection{Clausius-Clapeyron-Gleichung}
 \begin{figure}[!h]
-	\centering
-	\includegraphics[scale=0.3]{Carnot}
-	\caption{Darstellung des Carnot-Prozesses nach \protect\footnotemark}
-	\label{fig:carnot}
+\centering
+\includegraphics[scale=0.3]{Carnot}
+\caption{Darstellung des Carnot-Prozesses nach \protect\footnotemark}
+\label{fig:carnot}
 \end{figure}
 \footnotetext{http://www.ipf.uni-stuttgart.de/lehre/online-skript/waerme/carnot.gif}
 Man kann sich nun einen Carnot-Prozess vorstellen, bei dem in einem Zylinder mit Kolben abwechselnd Wasser verdampft und kondensiert wird.
@@ -247,7 +243,7 @@ Dieser beginnt mit einer komplett kondensierten Gasphase an Punkt 1 bei einer Te
 $1\rightarrow 2$ ist eine Isotherme nach der Van-der-Waals-Gleichung.
 Die verrichtete Arbeit ist% unter Zufuhr der Verdampfungsenergie $\Lambda$
 \begin{align*}
-	\Delta W_{12}=-(p+dp)(V_\text D-V_\text{Fl})
+\Delta W_{12}=-(p+dp)(V_\text D-V_\text{Fl})
 \end{align*}
 Wobei die Wärmezufuhr einerseits die Arbeit $-\Delta W_{12}$ verrichtet, andererseits aber auch die Flüssigkeit verdampft.
 2 ist nun der Punkt, an dem die komplette Flüssigkeit verdampft ist.
@@ -255,29 +251,29 @@ Die adiabatische Expansion $2\rightarrow 3$ verursacht eine Abkühlung um $dT$.
 Diese Temperatur wird nun in der isothermen Kompression erhalten, bis an Position 4 wieder aller Dampf kondensiert ist.\\
 Durch die infinitesimale Temperaturänderung $dT$ können die Näherungen
 \begin{align*}
-	V_\text D = V_{\text{D}_2}= V_{\text{D}_3}\qquad\text{und}\qquad V_\text{Fl}=V_{\text{Fl}_2}=V_{\text{Fl}_3}
+V_\text D = V_{\text{D}_2}= V_{\text{D}_3}\qquad\text{und}\qquad V_\text{Fl}=V_{\text{Fl}_2}=V_{\text{Fl}_3}
 \end{align*}
 verwendet werden.
 Außerdem sind dadurch die geleisteten Arbeiten $W_{23}$ und $W_{41}$ vernachlässigbar.
 So wird in $3\rightarrow 4$ die Arbeit
 \begin{align*}
-	\Delta W_{34}=p\cdot (V_\text D-V_\text{Fl})
+\Delta W_{34}=p\cdot (V_\text D-V_\text{Fl})
 \end{align*}
 verrichtet.
 Um wieder zum Ausgangspunkt 1 zurück zu kommen, muss das Volumen wieder um $dT$ erwärmt werden.\\
 Die insgesamt geleistete Arbeit ist unter Vernachlässigung von $W_{23}$ und $W_{41}$
 \begin{align*}
-	-\Delta W=-\Delta W_{12}-\Delta W_{34}=-dp\cdot (V_\text D -V_\text{Fl})
+-\Delta W=-\Delta W_{12}-\Delta W_{34}=-dp\cdot (V_\text D -V_\text{Fl})
 \end{align*}
 Woraus sich mit der Formel für den Wirkungsgrad eines Carnot-Prozesses die Verdampfungswärme $\Lambda$ errechnen lässt:
 \begin{align*}
-	\eta&=-\frac{\Delta W}{\Delta Q}=\frac{dp\cdot (V_\text D-V_\text{Fl})}{\Lambda}=\frac{dT}{T+dT}\approx \frac{dT}{T}\\
-	\Leftrightarrow\qquad \Lambda&=T\frac{dp}{dT}(V_\text D-V_\text{Fl})
+\eta&=-\frac{\Delta W}{\Delta Q}=\frac{dp\cdot (V_\text D-V_\text{Fl})}{\Lambda}=\frac{dT}{T+dT}\approx \frac{dT}{T}\\
+\Leftrightarrow\qquad \Lambda&=T\frac{dp}{dT}(V_\text D-V_\text{Fl})
 \end{align*}
 Hieraus kann nun mit dem idealen Gasgesetz unter Trennung der Variablen und mithilfe Integrierens die \emph{Dampfdruckformel} nach \cite[S. 342, Formel (10.127)]{demtroeder} hergeleitet werden
 \begin{align}
-	p(T)=p_0\cdot \exp\left( \frac{\Lambda}{R}\cdot\left( \frac{1}{T_0}-\frac{1}{T} \right)\right)
-	\label{eq:Dampfdruck}
+p(T)=p_0\cdot \exp\left( \frac{\Lambda}{R}\cdot\left( \frac{1}{T_0}-\frac{1}{T} \right)\right)
+\label{eq:Dampfdruck}
 \end{align}
 
 
@@ -288,37 +284,37 @@ Bei diesem Versuch wird zur Messung der Temperatur ein Pt1000-Widerstandsthermom
 Der Name verrät, dass der Messfühler aus Platin ist und bei $0\si{\celsius}$ einen Widerstand von $R_0=1000\si{\ohm}$ hat.
 Der Widerstand hängt so von der Temperatur $\vartheta>0\si{\celsius}$ ab:
 \begin{align}
-	R(\vartheta)&=R_0\cdot\left(1 + A\vartheta + B\vartheta^2\right) \label{eq:Pt1000}
+R(\vartheta)&=R_0\cdot\left(1 + A\vartheta + B\vartheta^2\right) \label{eq:Pt1000}
 \end{align}
 Die zugehörigen Konstanten findet man in Tabelle \ref{tab:Pt1000}.
 
 \begin{table}[!htb]
- \centering
- \begin{tabular}{|c|c|}
-   \hline
-   R$_0$ & $1000 ~ \si{\ohm}$\\
-   A   & $3.9083 \cdot 10^{-3} ~ \si{\celsius^{-1}}$\\
-   B   & $-5.775 \cdot 10^{-7} ~ \si{\celsius^{-2}}$\\
-   \hline
- \end{tabular}
- \caption{Kennwerte des Widerstandsthermometers}
- \label{tab:Pt1000}
+\centering
+\begin{tabular}{|c|c|}
+\hline
+R$_0$ & $1000 ~ \si{\ohm}$\\
+A   & $3.9083 \cdot 10^{-3} ~ \si{\celsius^{-1}}$\\
+B   & $-5.775 \cdot 10^{-7} ~ \si{\celsius^{-2}}$\\
+\hline
+\end{tabular}
+\caption{Kennwerte des Widerstandsthermometers}
+\label{tab:Pt1000}
 \end{table}
 
 Der Fehler der Temperaturmessung dieses Gerätes liegt bei
 \begin{align}
-	\Delta\vartheta=\pm (0.3~\si{\celsius}+0.005\vartheta)~.
-	\label{eq:Pt1000_fehler}
+\Delta\vartheta=\pm (0.3~\si{\celsius}+0.005\vartheta)~.
+\label{eq:Pt1000_fehler}
 \end{align}
 
 
 \section{Durchführung}
 \label{sec:durchfuehrung}
 \begin{figure}[!htb]
-	\centering
-	\includegraphics[scale=1.0]{Aufbau.jpg}
-	\caption{Versuchsaufbau Quelle:LP}	
-	\label{fig:Aufbau}
+\centering
+\includegraphics[scale=1.0]{Aufbau.jpg}
+\caption{Versuchsaufbau Quelle:LP}	
+\label{fig:Aufbau}
 \end{figure}
 
 Nachdem die Sicherheitshinweise (insbesondere die starke Erwärmung und der hohe Druck steigert das Gefahrenpotential) sorgfältig durchgelesen wurden, schaltet man das Gerät ein.
@@ -390,7 +386,7 @@ Außerdem kann die Siedetemperatur von Wasser berechnet werden:
  \sigma_{T_0} &= \sqrt{\left(\frac{\sigma_m}{b}\right)^2+\left(\frac{m\cdot \sigma_b}{b^2}\right)^2}\\
  T_0 &= (361.2 \pm 1.3)\si{\kelvin} = (88.0 \pm 1.3)\si{\celsius}
 \end{align*}
-Nun berechnen wir noch den Dampfdruck von Wasser bei $T=0\si{\celsius}=273.15\si{\kelvin}$ und unter Normaldruck $p_0=1013.25~\si{\hecto \pascal}$:
+Nun berechnen wir noch den Dampfdruck von Wasser bei $T=0\si{\celsius}=273.15\si{\kelvin}$: 
 \begin{align*}
  p &= p_0~\exp\left(m\frac{1}{T}+b\right)\\
  \sigma_p &= p~\sqrt{\frac{\sigma_m^2}{T^2}+\sigma_b^2}\\
