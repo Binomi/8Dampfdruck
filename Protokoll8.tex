@@ -176,11 +176,18 @@ Praktikant:
 
 \section{Einleitung}
 \label{sec:einleitung}
+<<<<<<< HEAD
 Will man ein Ei im Bergurlaub kochen, so kann es einem schnell passieren, dass das Eigelb noch flüssig ist.
 Man hat nichts anders gemacht, als zu Hause und dennoch scheint das kochende Wasser nicht so heiß zu sein.
 Um diesen Effekt erklären zu können, bedarf es des Dampfdrucks.
 Wie groß dieser ist und wie man das perfekte Ei auch immer und überall bekommt, wird in diesem Versuch geklärt.
 
+=======
+%ein paar Sätze vorneweg
+Ein \textit{Schnellkochtopf} basiert auch auf diesem Prinzip.
+In ihm steigt der Druck an und somit erhöht sich die Siedetemperatur von Wasser und das Essen wird schneller gar.
+Außerdem wird dadurch Energie gespart. 
+>>>>>>> 966d5b453ad298486ac89d44c7c668b2f5f9425d
 
 \section{Theorie}
 \label{sec:theorie}
@@ -190,11 +197,11 @@ Die reale Gasgleichung lautet nach \cite[S. 303]{gerthsen} mit der Ersetzung von
 \begin{align}
 	\left(p+\frac{n^2a}{V^2}\right)\left( V-nb \right)=nRT \label{eq:vanderwaalsgl}
 \end{align}
-Dabei betragen für Wasser die \emph{Van-der-Waals-Konstanten} $a=0.5537\si{\pascal~\meter^6}$ (Binnendruck) und $b=3.05\cdot10^{-5}\si{\meter^3}$ (Sättigungsdruck).\\
+Dabei betragen für Wasser die \emph{Van-der-Waals-Konstanten} $a=0.5537~\si{\pascal~\meter^6}$ (Binnendruck) und $b=3.05\cdot10^{-5}\si{\meter^3}$ (Sättigungsdruck).\\
 Sie entsteht dadurch, dass bei realen Gasen die Ausdehnung der Atome nicht mehr vernachlässigt wird.
 Dadurch ist das "reale Volumen" größer, als das ideale und zwar um eine stoffabhängige Konstante multipliziert mit der Stoffmenge: $V_\text{ideal}=V_\text{Real}-n\cdot b$ .\\
 Da in der idealen Gasgleichung die intermolekularen Kräfte bis auf elastische Stöße vernachlässigt sind, muss auch im Druck ein Korrekturfaktor eingeführt werden.
-Der Druck sinkt durch die zusätzlichen Möglichkeiten, Energie an andere Teilchen zu übertragen, weshalb zu dem "realen Druck" ein Summand hinzugefügt werden muss, um den idealen zu bekommen: $p_\text{ideal}=p_\text{real}+\frac{n^2\cdot a^2}{V^2}$ .
+Der Druck sinkt durch die zusätzlichen Möglichkeiten, Energie an andere Teilchen zu übertragen, weshalb zu dem ``realen Druck'' ein Summand hinzugefügt werden muss, um den idealen zu bekommen: $p_\text{ideal}=p_\text{real}+\frac{n^2\cdot a^2}{V^2}$ .
 Aus der idealen Gasgleichung $p_\text{ideal}V_\text{ideal}=nRT$ wird so Gleichung \eqref{eq:vanderwaalsgl}.
 
 
@@ -265,11 +272,13 @@ Woraus sich mit der Formel für den Wirkungsgrad eines Carnot-Prozesses die Verd
 Hieraus kann nun mit dem idealen Gasgesetz unter Trennung der Variablen und mithilfe Integrierens die \emph{Dampfdruckformel} nach \cite[S. 342, Formel (10.127)]{demtroeder} hergeleitet werden
 \begin{align}
 	p(T)=p_0\cdot \exp\left( \frac{\Lambda}{R}\cdot\left( \frac{1}{T_0}-\frac{1}{T} \right)\right)
+	\label{eq:Dampfdruck}
 \end{align}
 
 
 
 \subsection{Widerstandsthermometer}
+<<<<<<< HEAD
 Ein Widerstandsthermometer besteht aus einem Leiter, dessen elektrischer Widerstand von der Temperatur abhängig ist.
 Diesen kann man nun z.B. mit der Wheatstone'schen-Brückenschlatung vermessen.
 Über das bekannte Verhältnis von Temperatur zu Widerstand kann man nun die Temperatur bestimmen.\\
@@ -282,33 +291,17 @@ Die Temperaturabhängigkeit wird durch
 mit $A_\text{Pt}=3.9083\cdot 10^{-3}\si{\celsius^{-1}}$ und $B_\text{Pt}=-5.775\cdot 10^{-7}\si{\celsius^{-2}}$.
 Der sich ergebende Fehler liegt bei $\Delta T=\pm (0.3\si{\celsius}+0.005T)$.
 Diese Formel ist jedoch nur für $T>0\si{\celsius}$ richtig, was in unserem Versuchsaufbau jedoch nicht zu Problemen führt.
+=======
 
+Bei diesem Versuch wird zur Messung der Temperatur ein Pt1000-Widerstandsthermometer verwendet.
+Der Name verrät, dass der Messfühler aus Platin ist und bei $0\si{\celsius}$ einen Widerstand von $R_0=1000\si{\ohm}$ hat.
+Der Widerstand hängt so von der Temperatur $\vartheta>0\si{\celsius}$ ab:
+\begin{align}
+	R(\vartheta)&=R_0\cdot\left(1 + A\vartheta + B\vartheta^2\right) \label{eq:Pt1000}
+\end{align}
+Die zugehörigen Konstanten findet man in Tabelle \ref{tab:Pt1000}.
 
-
-\section{Durchführung}
-\label{sec:durchfuehrung}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[scale=1.0]{Aufbau.jpg}
-	\caption{Versuchsaufbau Quelle:LP}	
-	\label{fig:Aufbau}
-\end{figure}
-
-Nachdem die Sicherheitshinweise (insbesondere die starke Erwärmung steigert das Gefahrenpotential) sorgfältig durchgelesen wurden, schaltet man das Gerät ein.
-Der Heizstrahler erwärmt dann den mit Wasser gefüllten Kolben, welches dadurch verdampft.
-Am angeschlossenen Manometer liest man den Druck ab.
-Zeitgleich notiert man den Wert des Widerstandsthermometers und somit indirekt die Temperatur.
-Dies geschieht in 1 Bar-Schritten.
-Das Heizen wird beendet, wenn $1900 ~\si{\ohm}$ oder $45 \si{\bar}$ überschritten werden, damit das Gerät keinen Schaden nimmt.
-Nun wird die Messung während des Abkühlens wiederholt.
-
-\subsection{Sicherheitshinweise}
-
-
-\section{Auswertung}
-\label{sec:auswertung}
-\subsection{Druckkurven}
-\begin{table}
+\begin{table}[!htb]
  \centering
  \begin{tabular}{|c|c|}
    \hline
@@ -320,17 +313,45 @@ Nun wird die Messung während des Abkühlens wiederholt.
  \caption{Kennwerte des Widerstandsthermometers}
  \label{tab:Pt1000}
 \end{table}
+>>>>>>> 966d5b453ad298486ac89d44c7c668b2f5f9425d
 
+Der Fehler der Temperaturmessung dieses Gerätes liegt bei
 \begin{align}
-	R(\vartheta)&=R_0\cdot\left(1 + A\vartheta + B\vartheta^2\right)\\ \Rightarrow
+	\Delta\vartheta=\pm (0.3~\si{\celsius}+0.005\vartheta)~.
+	\label{eq:Pt1000_fehler}
+\end{align}
+
+
+\section{Durchführung}
+\label{sec:durchfuehrung}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=1.0]{Aufbau.jpg}
+	\caption{Versuchsaufbau Quelle:LP}	
+	\label{fig:Aufbau}
+\end{figure}
+
+Nachdem die Sicherheitshinweise (insbesondere die starke Erwärmung und der hohe Druck steigert das Gefahrenpotential) sorgfältig durchgelesen wurden, schaltet man das Gerät ein.
+Der Heizstrahler erwärmt dann den mit Wasser gefüllten Kolben, welches dadurch verdampft.
+Am angeschlossenen Manometer liest man den Druck ab.
+Zeitgleich notiert man den Wert des Widerstandsthermometers und somit indirekt die Temperatur.
+Dies geschieht in 1 Bar-Schritten.
+Das Heizen wird beendet, wenn $1900 ~\si{\ohm}$ oder $45 \si{\bar}$ überschritten werden, damit das Gerät keinen Schaden nimmt.
+Nun wird die Messung während des Abkühlens wiederholt.
+
+\section{Auswertung}
+\label{sec:auswertung}
+\subsection{Druckkurven}
+Löst man \eqref{eq:Pt1000} nach der Temperatur $\vartheta$ auf, ergibt sich folgende Gleichung
+\begin{align}
 	\vartheta&=-\frac{A}{2B}-\sqrt{\frac{A^2}{4B^2}-\frac{1}{B}+\frac{R}{R_0 B}}
 \end{align}
-\begin{align}
-	\Delta\vartheta=\pm (0.3~\si{\celsius}+0.005\vartheta)
-\end{align}
-
+Für den Fehler $\Delta\vartheta$ benutzt man \eqref{eq:Pt1000_fehler}.
 Nun muss $\vartheta$ noch in Kelvin umgerechnet werden.
 Außerdem wird für $p_0$ der gemessene Umgebungsdruck von 1017 hPa verwendet.
+Trägt man nun den Druck logarithmisch gegen den Kehrwert der Temperatur auf, erwartet man nach \eqref{eq:Dampfdruck} eine Gerade $$\ln\left(\frac{p}{p_0}\right) = -\frac{\Lambda}{R}\cdot\frac{1}{T}+\frac{\Lambda}{R}\cdot \frac{1}{T_0} = m \cdot T^{-1} + b$$
+Einen solchen Graphen nennt man \textit{Arrheniusplot}.
+Dies wurde einmal für das Erwärmen (Abb. \ref{fig:mess1}) und das Abkühlen (Abb. \ref{fig:mess2}) gemacht, die Werte aus der linearen Regression finden sich in Tabelle \ref{tab:regErg} wieder.
 
 \begin{figure}[!htb]
 	\centering
@@ -358,27 +379,28 @@ Außerdem wird für $p_0$ der gemessene Umgebungsdruck von 1017 hPa verwendet.
   %$\Lambda_V$ & $(35970 \pm 110)~\si{\joule/\mol}$ & $(38400 \pm 180)~\si{\joule/\mol}$\\
   %\hline
  \end{tabular}
+ \caption{Werte aus der linearen Regression der Arrheniusgraphen} 
  \label{tab:regErg}
 \end{table}
 
-Gewichtete Mittelwerte
+Dies sind die gewichteten Mittelwerte aus beiden Messungen:
 \begin{align*}
  m=(-4407 \pm 11)~\si{\kelvin} \qquad
  b=12.201 \pm 0.024
 \end{align*}
-
+Daraus berechnet man die Verdampfungswärme $\Lambda_V$ mit zugehörigem Fehler aus der Fehlerfortpflanzung:
 \begin{align*}
  \Lambda_V &= -m\cdot R\\
  \sigma_{\Lambda_V} &= \sigma_m \cdot R\\
  \Lambda_V&=(36640 \pm 100)~\si{\joule/\mol}
 \end{align*}
-
+Außerdem kann die Siedetemperatur von Wasser berechnet werden:
 \begin{align*}
  T_0 &= -\frac{m}{b}\\
  \sigma_{T_0} &= \sqrt{\left(\frac{\sigma_m}{b}\right)^2+\left(\frac{m\cdot \sigma_b}{b^2}\right)^2}\\
  T_0 &= (361.2 \pm 1.3)\si{\kelvin} = (88.0 \pm 1.3)\si{\celsius}
 \end{align*}
-Dampfdruck vun Wasser bei $T=0\si{\celsius}=273.15\si{\kelvin}$
+Nun berechnen wir noch den Dampfdruck von Wasser bei $T=0\si{\celsius}=273.15\si{\kelvin}$ und unter Normaldruck $p_0=1013.25~\si{\hecto \pascal}$:
 \begin{align*}
  p &= p_0~\exp\left(m\frac{1}{T}+b\right)\\
  \sigma_p &= p~\sqrt{\frac{\sigma_m^2}{T^2}+\sigma_b^2}\\
@@ -387,14 +409,15 @@ Dampfdruck vun Wasser bei $T=0\si{\celsius}=273.15\si{\kelvin}$
 
 
 \subsection{Siedetemperatur auf der Zugspitze}
-barometrische Höhenformel
+Hier soll nun die Siedetemperatur des Wassers auf der Zugspitze berechnet werden.
+Dort ist der Luftdruck geringer als auf Meereshöhe.
+Er berechnet sich nach der \textit{barometrische Höhenformel} \cite[S. 107]{gerthsen}:
 \begin{align}
  p(h)=p_0~\exp{\left(\frac{-\rho g h}{p_0}\right)}
+ \label{eq:baroHoehenformel}
 \end{align}
-\begin{align*}
- \frac{\Lambda_V}{R}\left(\frac{1}{T_0}-\frac{1}{T}\right)
-\end{align*}
-
+Wir verwenden hier die Literaturwerte für die Siedertemperatur $T_0$ auf NN und die molare Verdampfungswärme $\Lambda_V$  - nicht die von uns berechneten Werte, da diese eine große Abweichung aufweisen.
+Diese Werte und alle weiteren bei dieser Rechnung benötigten sind in der Tabelle \ref{tab:litW} zu finden.
 \begin{table}[!htb]
  \centering
  \begin{tabular}{|c|c|}
@@ -412,19 +435,32 @@ barometrische Höhenformel
  \caption{Literaturwerte}
  \label{tab:litW}
 \end{table}
-Höhe der Zugspitze $h=2962~\si{\meter}$
+Um die Siedetemperatur zu berechnen, setzt man Dampfdruck nach \eqref{eq:Dampfdruck} und Luftdruck nach \eqref{eq:baroHoehenformel} gleich.
 \begin{align*}
- T &= \left(\frac{1}{T_0}+\frac{\rho g h~R}{p_0~\Lambda_V}\right)^{-1}\\
- T&=362.9~\si{\kelvin}=89.8\si{\celsius}
+ \frac{\Lambda_V}{R}\left(\frac{1}{T_0}-\frac{1}{T_S}\right)=-\frac{\rho g h}{p_0}
 \end{align*}
-
-
+Es ergibt sich
+\begin{align}
+ T_S &= \left(\frac{1}{T_0}+\frac{\rho g h~R}{p_0~\Lambda_V}\right)^{-1}
+\end{align}
+Für die Höhe der Zugspitze $h=2962~\si{\meter}$ ergibt sich also eine Siedetemperatur des Wassers von $T_S=362.9~\si{\kelvin}=89.8\si{\celsius}$.
 
 
 \section{Diskussion}
 \label{sec:diskussion}
+Bei der Verdampfungswärme $\Lambda_V$ ergab sich eine Abweichung zum Literaturwert aus Tab.\ref{tab:litW} von $10\%$ und dieser liegt auch nicht im Fehlerintervall.
+Bei der Siedetemperatur kommt es darauf an, ob man die Celsius-Skala oder die Kelvin-Skala zu Grunde legt.
+Bei ersterer erhält man eine Abweichung von $12\%$, bei letzterer nur von etwas mehr als $3\%$.
+Auch hier liegt der Literaturwert nicht im Fehlerintervall.
+Zwar liegen die Messwerte noch in der gleichen Größenordnung, die Abweichungen sind jedoch signifikant.\\
+Die gefitteten Geraden der Arrheniusgraphen sehen jedoch gut aus und passen zu den Werten.
+Es muss also nach einem systematischen Fehler gesucht werden.
+Bei diesem Versuch konnten wir als Praktikanten wenig falsch machen.
+Das Ablesen des Druckes war jedoch sehr ungenau und das Manometer musste öfter angestoßen werden, da es zu träge war und keine Druckänderung anzeigte.\\
+So muss der Fehler bei den verwendeten Geräten liegen.
 
-\section{Anhang}
+
+%\section{Anhang}
 
 \bibliography{literatur}
 \bibliographystyle{babalpha}
